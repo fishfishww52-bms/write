@@ -58,5 +58,5 @@ void maintask(int voltage, int current, int cap, int cellnum, int temp, int init
     SystemParam.TEMP_NOW = temp;
 
     soc_process();
-   soc_show_process();
+    soc_show_process();
 }
