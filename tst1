@@ -1,0 +1,7 @@
+ if r.returncode != 0:
+        print(f"ERROR: {r.stderr[-300:]}")
+        return False
+    print("  OK")
+    print(f"\n  CSV  : {result_csv}")
+    print(f"  HTML : {result_html}")
+    return True
