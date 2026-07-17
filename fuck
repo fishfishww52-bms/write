@@ -1,0 +1,18 @@
+"""
+run_all.py — 一键完整流程
+
+用法:
+    python run_all.py <csv_name>             # 跑单个文件（不含 .csv 后缀）
+    python run_all.py 12_10_1                # 只跑 data/ms100/12_10_1.csv
+    python run_all.py all                    # 跑 ms100 下所有 CSV
+
+流程:
+  ms100/<name>.csv → soc_sim.exe → <name>_soc_result.csv → <name>_soc_result.html
+"""
+import sys
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).parent
+SOC_SIM = ROOT / "build" / "soc_sim.exe"
+MS100 = ROOT.parent / "data" / "excel" / "ms100"
